@@ -1,0 +1,23 @@
+{% extends 'global/base.html' %}
+
+{% block content %}
+
+
+  <div class="form-wrapper">
+    <h2>Login</h2>
+    
+    
+
+    {% if user.is_authenticated %}
+
+    <p>Olá! Você fez login como {{ user.username }}</p>
+
+    {% else %}
+      
+    {% include "contact/partials/_user_form.html" %}
+    <a href="{% url 'contact:register' %}">Register</a>
+    {% endif %}
+
+  </div>
+
+{% endblock content %}
